@@ -90,8 +90,8 @@ export default function Home() {
           animate="animate"
           exit="exit"
         >
-          {/* ===== SCROLL EXPERIENCE ===== */}
-          <section className="relative">
+          {/* ===== HOMEPAGE HERO ===== */}
+          <section className="relative w-full h-screen overflow-hidden">
             <ProductBottleScroll product={product} />
             <ProductTextOverlays product={product} />
           </section>
@@ -147,14 +147,18 @@ export default function Home() {
                     style={{ background: `${product.gradient}` }}
                   >
                     <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className="text-8xl mb-4">
+                      <motion.div
+                        className="text-center p-8"
+                        animate={{ y: [-15, 15, -15] }}
+                        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                      >
+                        <div className="text-8xl mb-4 drop-shadow-2xl">
                           {product.id === "mango" ? "🥭" : "🍎"}
                         </div>
                         <p className="text-white/80 font-light text-sm">
                           {product.detailsSection.imageAlt}
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                   {/* Decorative glow */}
