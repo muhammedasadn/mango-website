@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const footerLinks = {
-    Shop: ["All Juices", "Cream Mango", "Dutch Chocolate", "Ruby Pomegranate"],
+    Shop: ["All Juices", "Cream Mango", "Ruby Pomegranate"],
     Support: ["FAQs", "Shipping Info", "Returns", "Contact Us"],
     Company: ["About Us", "Blog", "Careers", "Press"],
 };
@@ -48,7 +48,7 @@ export default function Footer() {
                                     WebkitTextFillColor: "transparent",
                                 }}
                             >
-                                Nano Banana
+                                Fresh Essence
                             </span>
                         </div>
                         <p className="text-sm leading-relaxed text-gray-500">
@@ -109,7 +109,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-gray-600">
-                        © 2026 Nano Banana. All rights reserved.
+                        © 2026 Fresh Essence. All rights reserved.
                     </p>
                     <div className="flex gap-6">
                         {["Privacy", "Terms", "Cookies"].map((item) => (

@@ -8,7 +8,6 @@ interface ProductBottleScrollProps {
     product: Product;
 }
 
-const TOTAL_FRAMES = 120;
 
 export default function ProductBottleScroll({ product }: ProductBottleScrollProps) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -17,6 +16,8 @@ export default function ProductBottleScroll({ product }: ProductBottleScrollProp
     const [loadedCount, setLoadedCount] = useState(0);
     const currentFrameRef = useRef(0);
     const rafRef = useRef<number | null>(null);
+
+    const TOTAL_FRAMES = product.frameCount || 120;
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -32,7 +33,14 @@ export default function ProductBottleScroll({ product }: ProductBottleScrollProp
 
         for (let i = 1; i <= TOTAL_FRAMES; i++) {
             const img = new Image();
-            img.src = `${product.folderPath}/${i}.webp`;
+            if (product.id === "mango") {
+                img.src = `${product.folderPath}/${i}.webp`;
+            } else if (product.id === "pomegranate") {
+                const padded = i.toString().padStart(3, "0");
+                img.src = `${product.folderPath}/ezgif-frame-${padded}.jpg`;
+            } else {
+                img.src = `${product.folderPath}/${i}.webp`;
+            }
             img.onload = () => {
                 loaded++;
                 setLoadedCount(loaded);
@@ -70,22 +78,22 @@ export default function ProductBottleScroll({ product }: ProductBottleScrollProp
 
             ctx.clearRect(0, 0, rect.width, rect.height);
 
-            // "Contain" fit
+            // "Cover" fit
             const imgAspect = img.naturalWidth / img.naturalHeight;
             const canvasAspect = rect.width / rect.height;
 
             let drawWidth: number, drawHeight: number, offsetX: number, offsetY: number;
 
             if (imgAspect > canvasAspect) {
-                drawWidth = rect.width;
-                drawHeight = rect.width / imgAspect;
-                offsetX = 0;
-                offsetY = (rect.height - drawHeight) / 2;
-            } else {
                 drawHeight = rect.height;
                 drawWidth = rect.height * imgAspect;
                 offsetX = (rect.width - drawWidth) / 2;
                 offsetY = 0;
+            } else {
+                drawWidth = rect.width;
+                drawHeight = rect.width / imgAspect;
+                offsetX = 0;
+                offsetY = (rect.height - drawHeight) / 2;
             }
 
             ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);

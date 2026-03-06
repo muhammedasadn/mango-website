@@ -5,6 +5,7 @@ export interface Product {
     price: string;
     description: string;
     folderPath: string;
+    frameCount: number;
     themeColor: string;
     gradient: string;
     features: string[];
@@ -31,7 +32,8 @@ export const products: Product[] = [
         subName: "Pure sunshine.",
         price: "₹120",
         description: "Rich in Vitamin C - No preservatives - 100% fruit",
-        folderPath: "/images/mango",
+        folderPath: "/images/mango frames",
+        frameCount: 120,
         themeColor: "#FFB74D",
         gradient: "linear-gradient(135deg, #FFB74D 0%, #FFA726 100%)",
         features: ["Rich in Vitamin C", "No preservatives", "100% fruit"],
@@ -57,45 +59,15 @@ export const products: Product[] = [
             returnPolicy: "100% Satisfaction Guarantee. Not happy? We'll replace it, no questions asked."
         }
     },
-    {
-        id: "chocolate",
-        name: "Dutch Chocolate",
-        subName: "Velvety smooth.",
-        price: "₹140",
-        description: "Premium Cocoa - Almond Milk base - Plant Protein",
-        folderPath: "/images/chocolate", // Note: The assets for this might be missing, but we will leave the path.
-        themeColor: "#8D6E63",
-        gradient: "linear-gradient(135deg, #8D6E63 0%, #5D4037 100%)",
-        features: ["Premium Cocoa", "Almond Milk", "Plant Protein"],
-        stats: [{ label: "Dairy", val: "0%" }, { label: "Protein", val: "12g" }, { label: "Cocoa", val: "100%" }],
-        section1: { title: "Dutch Chocolate.", subtitle: "Velvety smooth." },
-        section2: { title: "Decadence redefined.", subtitle: "Rich, dark cocoa blended with creamy almond milk for a guilt-free treat." },
-        section3: { title: "Plant-powered energy.", subtitle: "Loaded with natural plant protein to fuel your active lifestyle." },
-        section4: { title: "Indulgence without compromise.", subtitle: "" },
-        detailsSection: {
-            title: "Ethically Sourced Cocoa",
-            description: "We source our cocoa from sustainable farms in Ghana, ensuring fair wages and premium quality. Blended with our house-made almond milk, this drink offers a silky texture that rivals traditional dairy shakes, but with zero cholesterol and 100% plant-based goodness.",
-            imageAlt: "Chocolate Details"
-        },
-        freshnessSection: {
-            title: "Cold-Crafted Perfection",
-            description: "Heat destroys delicate cocoa flavonoids. That's why we mix our Dutch Chocolate cold. Our almond milk is pressed fresh daily, never stored. The result is a clean, robust chocolate flavor that feels heavy on the tongue but light on the stomach."
-        },
-        buyNowSection: {
-            price: "₹140",
-            unit: "per 300ml bottle",
-            processingParams: ["Plant Based", "Cold Blended", "Dairy Free"],
-            deliveryPromise: "Shipped in insulated eco-friendly coolers. Keeps perfectly cold for 48 hours.",
-            returnPolicy: "Taste the difference or get your money back."
-        }
-    },
+
     {
         id: "pomegranate",
         name: "Ruby Pomegranate",
         subName: "Antioxidant powerhouse.",
         price: "₹150",
         description: "Heart Healthy - Cold Pressed - Immunity Booster",
-        folderPath: "/images/pomegranate", // Note: The assets for this might be missing, but we will leave the path.
+        folderPath: "/images/pomegranate frames",
+        frameCount: 175,
         themeColor: "#E57373",
         gradient: "linear-gradient(135deg, #E57373 0%, #C62828 100%)",
         features: ["Heart Healthy", "Cold Pressed", "Immunity Booster"],

@@ -149,7 +149,7 @@ export default function Home() {
                     <div className="w-full h-full flex items-center justify-center">
                       <div className="text-center p-8">
                         <div className="text-8xl mb-4">
-                          {product.id === "mango" ? "🥭" : product.id === "chocolate" ? "🍫" : "🍎"}
+                          {product.id === "mango" ? "🥭" : "🍎"}
                         </div>
                         <p className="text-white/80 font-light text-sm">
                           {product.detailsSection.imageAlt}

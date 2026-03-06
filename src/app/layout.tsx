@@ -5,7 +5,7 @@ import './globals.css';
 const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Nano Banana | Future of Freshness',
+  title: 'Fresh Essence | Premium Juices',
   description: 'Premium juice brand featuring the future of freshness.',
 };
 
